@@ -1,0 +1,371 @@
+@import url("reset.css");
+
+body{
+    font-family: Proxima Nova;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    color: 262626;
+    background: #F2F2F2;
+    /* overflow-y: hidden; */
+}
+
+.wrapper{
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.holder{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.holder a{
+    text-decoration:none;
+}
+
+.holder .logo_blue{
+    margin: 25px 80px auto;
+    width: 120px;
+    display: block;
+}
+
+.holder .logo_white{
+    margin: 41px 60px auto;
+    width: 140px;
+    display: none;
+}
+
+.holder_right{
+    display: flex;
+    margin-right: 60px;
+}
+
+.holder_button{
+    margin-top: 30px;
+    margin-right: 44px;
+    width: 200px;
+    height: 41px;
+    text-align: center;
+    line-height: 41px;
+    border: 0;
+    border-radius: 24px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    background: linear-gradient(90deg, #4EE5EA 3.94%, #26D0A8 94.73%);
+}
+
+#nav{
+    margin-top: 40px;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+#nav div{
+    position: absolute;
+    top:0;
+    width: 30px;
+    height: 3px;
+    background: #414042;
+}
+
+#nav div:nth-child(2),#nav div:nth-child(3){
+    top:10px;
+}
+
+#nav div:nth-child(4){
+    top: 20px;
+    width: 26px;
+    margin-left: 4px;
+}
+
+
+  
+  #nav.open div:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  #nav.open div:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #nav.open div:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #nav.open div:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+
+/* banner */
+.banner{
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.banner_video{
+    width: 100%;
+    height: 100%;
+    background-color: #26D0A8;
+    position: absolute;
+    top:0;
+    border-radius: 0 0 50px 50px;
+}
+.banner_content{
+    position: relative;
+    height: 100vh;
+}
+.banner_text1{
+    position: absolute;
+    left: 4.34vw;
+    bottom: 23vh;
+    
+}
+.banner_text1 p{
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical;
+    transform: scaleX(-1) rotateX(180deg);
+    z-index: 10;
+    color: white;
+    /* position: absolute;
+    left: 4.34%;
+    top:249px; */
+}
+
+.banner_text1 div{
+    content: "";
+    margin: 24.5px auto;
+    width: 2px;
+    height: 113px;
+    background-color: fff;
+}
+
+.banner_text2{
+    position: absolute;
+    /* top: 181px; */
+    bottom: 32.2%;
+    left: 15.2vw;
+}
+
+.banner_text2 h1{
+    font-size: 38px;
+    line-height: 70px;
+    letter-spacing: 9.17px;
+    color: white;
+    font-weight: 700;
+    margin-top: 34px;
+}
+
+
+.pink{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #EE6C8A;
+    border-radius: 50%;
+}
+
+.banner_text2 h1::after{
+    content: "";
+    margin-top: -24px;
+    display: block;
+    width: 571px;
+    height: 4px;
+    background-color: #26C6D0;
+}
+
+.salad{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.salad img{
+    display: block;
+    margin: 0 auto;
+}
+
+.salad p{
+    margin-top: 11px;
+    font-size: 14px;
+    line-height: 17.05px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.salad div{
+    margin: 30.67px auto 0;
+    width: 1px;
+    height: 44.04px;
+    background-color: #fff;
+}
+
+.about_vline{
+    margin: 0 auto;
+    width: 1px;
+    height: 86px;
+    background-color: 808080; 
+}
+
+.about_title{
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 3.64px;
+}
+
+.about_video{
+    margin: 72.7px auto 0;
+    display: block;
+    width: 960px;
+    height: 544px;
+}
+
+.about p{
+    margin: 30px auto 0;
+    width: 1007px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.about_button{
+    display: block;
+    width: 223px;
+    height: 86px;
+    margin: 30px auto;
+    background-color: #26C6D0;
+    color: white;
+    text-align: center;
+    line-height: 86px;
+}
+
+.about_button span{
+    display: inline-block;
+    width: 52px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    margin-left: 14.91px;
+
+}
+
+.awards{
+    display: flex;
+    box-sizing: border-box  ;
+    padding:65px 0 99px 69px;
+    background-color: #fff;
+    border-radius: 40px 0 40px 40px;
+    float: right;
+    width: 93.47vw;
+    height: 432px;
+}
+.awards .awards_title{
+    width: 416px;
+    flex-shrink: 0;
+}
+.awards_title h3{
+text-align: center;
+    font-size: 28px;
+}
+
+.awards_title div{
+    width: 185px;
+}
+
+.awards_title p{
+    font-weight: 400;
+    margin-top: 31.7px;
+}
+.awards_award{
+    align-self: center;
+    margin-left: 37px;
+    line-height: 28px;
+}
+
+.awards_award div:first-child{
+    margin-bottom: 19px;
+}
+
+.awards_award{
+    margin-top: 33px;
+    margin-right: 37px;
+}
+
+.ingradients{
+    margin-top: 286px;
+    box-sizing: border-box;
+    background-color: #26C6D0;
+}
+
+.ingradients .about_title{
+    box-sizing: border-box;
+    padding-top: 280px;
+    color: #fff;
+}
+
+.ingradients_text{
+    margin: 44.7px auto;
+    color:#fff;
+    font-weight: 400;
+    width: 1007px;
+    letter-spacing: 1px;
+}
+
+.ingradients_button{
+    display: block;
+    width: 223px;
+    height: 86px;
+    margin: 30px auto;
+    background-color: #585880;
+    color: white;
+    text-align: center;
+    line-height: 86px;
+}
+
+.ingradients_button span{
+    display: inline-block;
+    width: 52px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    margin-left: 14.91px;
+
+}

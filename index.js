@@ -1,3 +1,15 @@
+$(document).ready(function(){
+	$('#nav').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+
+
+
+
+
+
+
 new Vue({
     el:"#app",
     data:{
@@ -40,4 +52,12 @@ new Vue({
             },
         ]
     },
+    mounted(){
+        
+    },
+    methods:{
+
+            
+        
+    }
 })
