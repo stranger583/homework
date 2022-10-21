@@ -3,10 +3,173 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>hello word</h1>
-    <h2>test test</h2>
+    <div id="app" class="wrapper">
+        <header class="holder">
+            <a href="#">
+                <img src="./img/Frame.png" alt="">
+                <img src="./img/Logo.png" alt="">
+            </a>
+
+            <div>
+                <button>START YOUR PROJECT</button>
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <section class="slidMenu">
+
+        </section>
+
+        <section class="banner">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8_4JRK4QkqU?autoplay=1&mute=1&controls=0&disablekb=1＆rel=0loop=1&playlist=8_4JRK4QkqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <div class="banner_content">
+                <div class="banner_text1">
+                    <p>DIGITAL AGENCY</p>
+                </div>
+                <div class="banner_text2">
+                    <img src="./img/big_logo.png" alt="">
+                    <h1>
+                        WE CREATE</br>AMAZING</br>DIGITAL EXPERIENCES
+                    </h1>
+                </div>
+            </div>
+            <div>
+                <img src="./img/salad.png" alt="">
+                <p>TASTE US NOW!</p>
+            </div>
+        </section>
+        <section class="about">
+            <div>
+                <h2>ABOUT DIGISALAD</h2>
+                <img src="./img/about_line.png" alt="">
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/IeIRJ9jZ5Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+            <a href="#">
+                <button>VIEW MORE<span></span></button>
+            </a>
+        </section>
+        <section class="awards">
+            <div>
+                <h2>AWARDS</h2>
+                <img src="./img/Vector.png" alt="">
+                <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. </p>
+            </div>
+            <div>
+                <span>
+                    <img src="./img/award.png" alt="">
+                    <img src="./img/award.png" alt="">
+                </span>
+                <span>
+                    <img src="./img/award.png" alt="">
+                    <img src="./img/award.png" alt="">
+                </span>
+            </div>
+        </section>
+        <section class="ingradients">
+            <div>
+                <h3>OUR INGRADIENTS</h3>
+                <img src="./img/purple_line.png" alt="">
+                <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                <a href="#">
+                    <button>OUR SERVICES<span></span></button>
+                </a>
+            </div>
+            <div v-for="list in lists">
+                <span><img :src="list.img" alt=""></span>
+                <h4>{{list.text}}</h4>
+                <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.</p>
+                <a href="＃"><button>VIEW MORE</button></a>
+            </div>
+            <h6>
+                VIEW MORE DIGISALAD’S INGRADIENTS
+            </h6>
+        </section>
+        <section class="ceo">
+            <div>
+                <img src="./img/ceo.png" alt="">
+                <h4>Tony Ng</h4>
+                <p>Founder & Creative Director</p>
+            </div>
+            <div>
+                <img src="./img/Quotemarks left.png" alt="">
+                <p>A great digital work isn’t about designing beautiful pages purely. It is about context - how do we deliver the <span>right experience to the right person at the right time</span>. The most important thing is that your work can engage customers at anytime, anywhere and let users experience an entire amazing digital journey.</p>
+            </div>
+        </section>
+        <section class="brand">
+            <div>OUR BRAND EXPERIENCE</div>
+            <img src="./img/experience_line.png" alt="">
+            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+            <img src="./img/client.png" alt="">
+        </section>
+        <section class="buttom">
+            <p>01 <span></span> 04</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/slider_01.png" alt="">
+                        <div>
+                            <p>HIGHLIGHTED SHOWCASE</p>
+                            <h2>LP CLUB MOBILE APP</h2>
+                            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                        </div>
+                        <a href="">
+                            <button>VIEW PROJECT <span></span></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/slider_01.png" alt="">
+                        <div>
+                            <p>HIGHLIGHTED SHOWCASE</p>
+                            <h2>LP CLUB MOBILE APP</h2>
+                            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                        </div>
+                        <a href="">
+                            <button>VIEW PROJECT <span></span></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/slider_01.png" alt="">
+                        <div>
+                            <p>HIGHLIGHTED SHOWCASE</p>
+                            <h2>LP CLUB MOBILE APP</h2>
+                            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                        </div>
+                        <a href="">
+                            <button>VIEW PROJECT <span></span></button>
+                        </a>
+                    </div>
+                    <div class="swiper-slide"><img src="./img/slider_01.png" alt="">
+                        <div>
+                            <p>HIGHLIGHTED SHOWCASE</p>
+                            <h2>LP CLUB MOBILE APP</h2>
+                            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
+                        </div>
+                        <a href="">
+                            <button>VIEW PROJECT <span></span></button>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+<script src="./index.js"></script>
 </body>
 </html>
