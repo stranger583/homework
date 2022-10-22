@@ -27,15 +27,55 @@
                     <div></div>
                 </div>
             </div>
+            <section class="slidMenu">
+                <div class="menu_center">
+                    <div class="menu_one top">
+                        <div class="menu_one_one top">
+                            <img src="./img/veg.png" alt="" class="top">
+                            <div>
+                                <p class="top">EMPOWERING BRANDS</p>
+                                <h2 class="top">ABOUT US<span class="pink"></span></h2>
+                            </div>
+                        </div>
+                        <div class="menu_one_two top">
+                            <img src="./img/ing2.png" alt="" class="top">
+                            <div>
+                                <p class="top">CASE STUDIES</p>
+                                <h2 class="top">WORKS<span class="pink"></span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_two top">
+                        <div class="menu_two_one top">
+                            <img src="./img/che.png" alt="" class="top">
+                            <p class="top">BE COOL WITH US</p>
+                            <h2 class="top">CAREERS<span class="pink"></span></h2>
+                        </div>
+                        <div class="menu_two_two top">
+                            <img src="./img/pic.png" alt="" class="top">
+                            <p class="top">OUR STRATEGIES</p>
+                            <h2 class="top">INSIGHTS<span class="pink"></span></h2>
+                        </div>
+                    </div>
+                    <div class="menu_three top">
+                        <div class="menu_three_one top">
+                            <img src="./img/ing10.png" alt="" class="top">
+                            <p class="top">AREAS OF EXPERTISE</p>
+                            <h2 class="top">SERVICES<span class="pink"></span></h2>
+                        </div>
+                        <div class="menu_three_two top">
+                            <p class="top">START YOUR JOURNEY WITH US</p>
+                            <h2 class="top">CONTACT<span class="pink"></span></h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </header>
-        <section class="slidMenu">
-
-        </section>
 
         <main>
             <section class="banner">
                 <div class="banner_video"></div>
-                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8_4JRK4QkqU?autoplay=1&mute=1&controls=0&disablekb=1＆rel=0loop=1&playlist=8_4JRK4QkqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen class="banner_video"> -->
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8_4JRK4QkqU?autoplay=1&mute=1&controls=0&disablekb=1＆rel=0loop=1&playlist=8_4JRK4QkqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen class="banner_video">
                 </iframe>
                 <div class="banner_content">
                     <div class="banner_text1">
@@ -89,7 +129,7 @@
                 </div>
             </section>
             <section class="ingradients">
-                <div>
+                <div class="ingradients_top">
                     <div class="about_title">
                         <h3>OUR INGRADIENTS
                             <span class="pink"></span>
@@ -100,34 +140,41 @@
                     <a href="#" class="ingradients_button">
                         OUR SERVICES<span></span>
                      </a>
-
                 </div>
-                <div v-for="list in lists">
-                    <span><img :src="list.img" alt=""></span>
-                    <h4>{{list.text}}</h4>
-                    <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.</p>
-                    <a href="＃"><button>VIEW MORE</button></a>
+                <div class="ingradients_bottom">
+                    <div class="ingradients_center">
+                        <div v-for="list in lists" class="ingradients_list">
+                            <div><img :src="list.img" alt=""></div>
+                            <h4 v-html="list.text">{{list.text}}</h4>
+                            <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.</p>
+                            <a href="＃">VIEW MORE</a>
+                        </div>
+                    </div>
                 </div>
                 <h6>
                     VIEW MORE DIGISALAD’S INGRADIENTS
                 </h6>
             </section>
             <section class="ceo">
-                <div>
+                <div class="ceo_left">
                     <img src="./img/ceo.png" alt="">
                     <h4>Tony Ng</h4>
                     <p>Founder & Creative Director</p>
                 </div>
-                <div>
+                <div class="ceo_right">
                     <img src="./img/Quotemarks left.png" alt="">
                     <p>A great digital work isn’t about designing beautiful pages purely. It is about context - how do we deliver the <span>right experience to the right person at the right time</span>. The most important thing is that your work can engage customers at anytime, anywhere and let users experience an entire amazing digital journey.</p>
                 </div>
             </section>
             <section class="brand">
-                <div>OUR BRAND EXPERIENCE</div>
-                <img src="./img/experience_line.png" alt="">
+                <div class="about_title">
+                    <h3>OUR BRAND EXPERIENCE
+                        <span class="pink"></span>
+                    </h3>
+                    <img src="./img/experience_line.png" alt="">
+                </div>
                 <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.</p>
-                <img src="./img/client.png" alt="">
+                <img src="./img/client.png" class="client_img" alt="">
             </section>
             <section class="buttom">
                 <p>01 <span></span> 04</p>

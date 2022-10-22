@@ -16,35 +16,35 @@ new Vue({
         lists:[
             {
                 img:"./img/ing1.png",
-                text:"UX Design"
+                text:"UX DESIGN"
             },
             {
                 img:"./img/ing2.png",
-                text:"UI Design"
+                text:"UI DESIGN"
             },
             {
                 img:"./img/ing3.png",
-                text:"website development"
+                text:"WEBSITE</br>DEVELOPMENT"
             },
             {
                 img:"./img/ing4.png",
-                text:"mobile app development"
+                text:"MOBILE APP</br>DEVELOPMENT"
             },
             {
                 img:"./img/ing5.png",
-                text:"ecommerce"
+                text:"ECOMMERCE"
             },
             {
                 img:"./img/ing6.png",
-                text:"customer loyalty"
+                text:"CUSTOMER LOYALTY"
             },
             {
                 img:"./img/ing7.png",
-                text:"digital transformation"
+                text:"DIGITAL</br>TRANSFORMATION"
             },
             {
                 img:"./img/ing8.png",
-                text:"digital marketing"
+                text:"DIGITAL MARKETING"
             },
             {
                 img:"./img/ing9.png",
