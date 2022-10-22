@@ -15,7 +15,8 @@ body{
 .wrapper{
     max-width: 100%;
     width: 100%;
-    overflow: hidden;
+    padding-bottom: 82px;
+    /* overflow: hidden; */
 }
 
 .holder{
@@ -477,16 +478,19 @@ text-align: center;
     align-self: center;
     margin-left: 37px;
     line-height: 28px;
+    margin-top: 33px;
+    margin-right: 37px;
 }
+
 
 .awards_award div:first-child{
     margin-bottom: 19px;
 }
 
-.awards_award{
-    margin-top: 33px;
-    margin-right: 37px;
+.awards_award img{
+    width: calc( 283 / 1440 * 100vw);
 }
+
 
 .ingradients{
     margin-top: 286px;
@@ -530,7 +534,6 @@ text-align: center;
     margin-bottom: 5px;
     background-color: #fff;
     margin-left: 22.72px;
-
 }
 
 .ingradients_top{
@@ -568,6 +571,7 @@ text-align: center;
 .ingradients_list h4{
     font-size: 20px;
     line-height: 24.36px;
+    height: 39px;
     color: #fff;
     margin-top: 15.1px;
     margin-bottom: 20px;
@@ -647,6 +651,7 @@ text-align: center;
     font-size: 16px;
     width: 250px;
     font-weight: 400;
+    font-style: italic;
 }
 
 .ceo_right{
@@ -693,6 +698,184 @@ text-align: center;
     background-image: url(../img//slider_bg.png);
     background-position: center center;
     background-repeat: no-repeat;
+    position: relative;
+    border-radius: 0 0 50px 50px;
     /* background-size: cover; */
 }
 
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  } 
+
+  .slider_content{
+    display: flex;
+    position: relative;
+    color: white;
+    width: calc(1037 / 1440 * 100vw);
+    margin: 0 auto;
+  }
+
+  .slider_content img{
+    height: 540px;
+    border-radius: 30px;
+  }
+
+.sld_text{
+    margin: 63px 0 0 71px;
+}
+
+.sld_p1{
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 2.2px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.sld_p2{
+    width: 432px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+    font-size: 16px;
+    
+
+}
+
+  .slider_content h2::after{
+    content: "";
+    z-index: -1;
+    display: block;
+    width: 410px;
+    height: 5.5px;
+    margin-top: -12px;
+    margin-left: -10px;
+    background-color: #26C6D0;
+}
+.slider_content h2{
+    width: 440px;
+    color: #fff;
+    font-size: 18px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 39px;
+    letter-spacing: 3px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.slider_content .pink{
+    margin-left: 27px;
+}
+
+.sld_button{
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 140px;
+    background-color: #26C6D0;
+    color: white;
+    text-align: center;
+    line-height: 140px;
+    letter-spacing: 2.22px;
+    font-weight: 700;
+    font-size: 16px;
+    bottom: -88px;
+    left: 311px;
+}
+
+.sld_button span{
+    display: inline-block;
+    width: 70px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    margin-left: 26px;
+}
+
+.sld_circle2{
+    width: 53px;
+    height: 53px;
+    background-color: #26C6D0;
+    position: absolute;
+    border-radius: 50%;
+    top: 415px;
+    left: 98px;
+}
+
+.sld_circle1{
+    width: 53px;
+    height: 53px;
+    background-color: #26C6D0;
+    position: absolute;
+    border-radius: 50%;
+    top: 415px;
+    right: 98px
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    color: white;
+    font-size: 24px;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.page{
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 2.22px;
+    text-align: left;
+    top:100px;
+    right:114px;
+}
+
+.page_line{
+    display: block;
+    width: 48px;
+    height: 1px;
+    background-color: #26C6D0;
+    transform: rotate(135deg);
+}
+
+.page_now{
+    display: block;
+    margin-bottom: 4px;
+    margin-right: 30px;
+}
+
+.page_t{
+    display: block;
+    margin-top: 4px;
+    margin-left: 30px;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+  } */
