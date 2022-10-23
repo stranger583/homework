@@ -26,7 +26,6 @@ body{
     z-index: 100;
     width: 100%;
     height: 100px;
-    background: rgba(255, 255, 255, 0.9);
 }
 
 .holder a{
@@ -51,6 +50,7 @@ body{
 .holder_right{
     display: flex;
     margin-right: 60px;
+    z-index: 2001;
 }
 
 .holder_button{
@@ -84,6 +84,7 @@ body{
     cursor: pointer;
 }
 #nav div{
+    border-radius: 2px;
     position: absolute;
     z-index: 2000;
     top:0;
@@ -139,6 +140,7 @@ body{
   }
 /* menu */
 .slidMenu{
+    display: none;
     position:fixed;
     top:-100vh;
     max-width: 100%;
@@ -294,18 +296,24 @@ body{
 
 /* banner */
 .banner{
+    overflow: hidden;
+    background-image: url(../img/banner_bg.png);
+    background-color: rgba(81,150,191,.6);;
+    border-radius: 0 0 50px 50px;
+    background-size: cover;
     max-width: 100%;
     width: 100%;
     height: 100vh;
     position: relative;
 }
 .banner_video{
-    width: 100%;
-    height: 100%;
+    width: 120vw;
+    height: 100vh;
+    left: -10vw;
     position: absolute;
-    z-index: 5;
+    -webkit-filter:brightness(.7);
+    /* z-index: 5; */
     top:0;
-    border-radius: 0 0 50px 50px;
 }
 .banner_content{
     position: relative;
@@ -414,13 +422,13 @@ body{
 .about_video{
     margin: 72.7px auto 0;
     display: block;
-    width: 960px;
-    height: 544px;
+    width: 66.7vw;
+    height: 37.8vw;
 }
 
 .about p{
     margin: 30px auto 0;
-    width: 1007px;
+    width: 69.9%;
     text-align: center;
     letter-spacing: 1px;
     font-weight: 400;
@@ -510,8 +518,7 @@ text-align: center;
     margin: 44.7px auto;
     color:#fff;
     font-weight: 400;
-    width: 1007px;
-    height: 154px;
+    width: 69.9%;
     letter-spacing: 1px;
     text-align: center;
 }
@@ -623,17 +630,20 @@ text-align: center;
 .ceo{
     float: left;
     background-image: url(../img/ceo\ _bg.png);
-    width: 1300px;
+    background-size: cover;
+    width: 90.2vw;
     height: 600px;
     margin-top: -380px;
     display: flex;
     border-radius: 0 50px 50px 50px;
+    padding-right: 6.94vw;
+    box-sizing: border-box;
     color: white;
 }
 
 
 .ceo_left{
-    margin: 156px 111px 0 127px;
+    margin: 156px 7.7vw 0 8.8vw;
     display: block;
 }
 
@@ -655,6 +665,7 @@ text-align: center;
 }
 
 .ceo_right{
+    /* margin-top: calc(100px - (1440px - 100vw) / 8); */
     margin-top: 100px;
 }
 .ceo_right img{
@@ -664,9 +675,10 @@ text-align: center;
 
 .ceo_right p{
     letter-spacing: 2px;
-    width: 734px;
+    /* width: 51vw; */
     font-size: 22px;
-    line-height: 48px;
+    /* line-height: 48px; */
+    line-height: 3.3vw;
     font-weight: 400;
 }
 
@@ -682,7 +694,7 @@ text-align: center;
 
 .brand p{
     margin: 55.7px auto 73px;
-    width: 1007px;
+    width: 69.9%;
     line-height: 24px;
     text-align: center;
     font-weight: 400;
@@ -729,7 +741,7 @@ text-align: center;
     display: flex;
     position: relative;
     color: white;
-    width: calc(1037 / 1440 * 100vw);
+    /* width: calc(1037 / 1440 * 100vw); */
     margin: 0 auto;
   }
 
@@ -739,7 +751,7 @@ text-align: center;
   }
 
 .sld_text{
-    margin: 63px 0 0 71px;
+    margin: 63px 0 0 4.93vw;
 }
 
 .sld_p1{
@@ -752,7 +764,7 @@ text-align: center;
 }
 
 .sld_p2{
-    width: 432px;
+    width: 30vw;
     font-weight: 200;
     line-height: 24px;
     letter-spacing: 1px;
@@ -801,7 +813,7 @@ text-align: center;
     font-weight: 700;
     font-size: 16px;
     bottom: -88px;
-    left: 311px;
+    left: calc( 311px - (1440px - 100vw)* 0.18);
 }
 
 .sld_button span{
@@ -818,6 +830,7 @@ text-align: center;
     height: 53px;
     background-color: #26C6D0;
     position: absolute;
+    z-index: 10;
     border-radius: 50%;
     top: 415px;
     left: 98px;
@@ -827,6 +840,7 @@ text-align: center;
     width: 53px;
     height: 53px;
     background-color: #26C6D0;
+    z-index: 10;
     position: absolute;
     border-radius: 50%;
     top: 415px;
@@ -879,3 +893,44 @@ text-align: center;
 /* ::-webkit-scrollbar {
     display: none;
   } */
+
+  /* --- classList --- */
+.nav_in{
+    display: block;
+    animation: move  1.5s ease-in-out forwards;
+    transition: all 1s;
+   }
+   
+   @keyframes move{
+    0%{
+        top:-100vh;
+    }
+    100%{
+        top: 0;
+    }
+   } 
+
+   .nav_out{
+    display: block;
+    animation: out  1.5s ease-in-out forwards;
+    transition: all 1s;
+   }
+
+   @keyframes out{
+    0%{
+        top:0;
+    }
+    100%{
+        top: -100vh;
+        display: none;
+    }
+   } 
+
+   .holder .none{
+    display: none;
+   }
+
+   .holder .block{
+    display: block;
+   }
+
