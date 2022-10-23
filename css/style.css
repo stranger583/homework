@@ -1049,6 +1049,282 @@ text-align: center;
 
 
 /* rwd手機 */
-   @media screen and (max-width:415px) {
+   @media screen and (max-width:600px) {
+    .holder{
+        height: 64px;
+        padding: 13px 25px 0;
+        box-sizing: border-box;
+        /* background-color: #fff; */
+    }
+
+    .holder_button{
+        display: none;
+    }
+
+    .holder_right{
+        margin: 0;
+    }
+
+    #nav{
+        margin: 7px 0;
+    }
+
+    #nav div{
+        width: 20px;
+    }
+    #nav div:nth-child(2), #nav div:nth-child(3){
+        top:7px
+    }
+    #nav div:nth-child(4){
+        width: 16px;
+        top:14px;
+    }
+
+    .wrapper .holder .logo_blue{
+        width: 95px;
+        margin: 0;
+    }
+    .banner_text2{
+        bottom: 27.2%;
+    }
+    .banner_text2 h1{
+        letter-spacing: 2.5px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+
+    .banner_text2 img{
+        width: 120px;
+    }
+
+    .banner_text2 h1::after{
+        width: 250px;
+        height: 7px;
+        margin-top:-18px;
+    }
+
+    .about{
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+    .about_vline{
+        height: 60px;
+    }
+    .about_title{
+        font-size: 20px;
+        letter-spacing: 1.5px;
+    }
+
+    .about_title img{
+        width: 300px;
+        margin-top: 5px;
+    }
+
+    .about_video{
+        width: calc(100vw - 50px);
+        height: calc((100vw - 50px) * 0.652);
+        margin-top: 40px;
+    }
+
+    .about p{
+        margin-top: 50px;
+        width: auto;
+    }
+
+    .awards{
+        height: auto;
+        width: 90%;
+        max-width: 100%;
+        margin: 40px auto 0 ;
+        border-radius: 20px;
+        float: none;
+        padding: 40px 25px ;
+        display: block;
+    }
+
+    .awards .awards_title{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .awards_award_contain{
+        margin: 0;
+    }
+
+    .awards_title div{
+        width: auto;
+    }
+
+    .awards .awards_title img{
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+    }
+    .awards_title h3{
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .awards_title p{
+        margin-top: 40px;
+        text-align: center;
+    }
+    .awards_award_contain{
+        width: auto;
+    }
+    .awards_award div{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .awards_award img{
+        width: 80%;
+        margin-left: 25px;
+    }
+
+    .ingradients{
+        margin-top: 40px;
+        padding: 40px 25px;
+    }
+
+    .ingradients .about_title{
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .ingradients_text{
+        width: auto;
+    }
+
+    .ingradients_list{
+        margin: 0 auto 60px;
+    }
+
+    .ingradients_list p{
+        margin-top: 0;
+        width: auto;
+    }
+
+    .ingradients_list h4{
+        font-size: 18px;
+        margin-bottom: 15px;
+        height: auto;
+    }
+
+    .ingradients h6{
+        display: none;
+    }
+
+    .ceo{
+        float: none;
+        display: block;
+        margin: 40px auto;
+        padding: 40px 25px;
+        border-radius: 20px;
+        height: auto;
+        width: 90%;
+        background-attachment: fixed;
+    }
+
+    .ceo_right{
+        max-width: none;
+        width: auto;
+    }
+
+    .ceo_left p{
+        text-align: center;
+        width: auto;
+    }
+
+    .ceo_right p{
+        font-size: 16px;
+        margin-top: 40px;
+        line-height: 1.6;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .ceo_right img{
+        display: none;
+    }
+
+    .brand{
+        margin-top: 0;
+        padding: 40px 25px;
+    }
+
+    .brand p{
+        margin: 40px auto;
+        width: auto;
+    }
+
+    .brand .about_title img{
+        width: 325px;
+    }
+
+    .client_img{
+        max-width: none;
+        width: 90%;
+    }
+
+    .buttom{
+        padding-top: 100px;
+    }
+    
+    .sld_text{
+        width: 90%;
+    }
+
+    .slider_content h2{
+        width: auto;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .slider_content .pink{
+        margin-left: 10px;
+    }
+
+    .slider_content h2::after{
+        width: 312px;
+        margin: -14px auto;
+    }
+
+    .sld_p2{
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5; /*行數*/
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    }
+
+    .sld_circle1{
+        width: 30px;
+        height: 30px;
+    }
+
+    .sld_circle2{
+        width: 30px;
+        height: 30px;
+    }
+
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+        font-size: 14px;
+    }
+    
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+        font-size: 14px;
+    }
+
+    .swiper-button-next, .swiper-rtl .swiper-button-prev{
+        right: 0;
+    }
+
+    .swiper-button-prev, .swiper-rtl .swiper-button-next{
+        left: 0;
+    }
+    
 
    }
+
+  
