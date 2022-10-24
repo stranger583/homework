@@ -69,7 +69,27 @@ body{
     font-weight: 700;
     font-size: 14px;
     background: linear-gradient(90deg, #4EE5EA 3.94%, #26D0A8 94.73%);
+    transition: all 2s ease-in-out;
+    background-size: 300%;
 }
+
+.holder_button:hover{
+    background-size: 300%;
+    animation: gradient 5s infinite;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0 ;
+    }
+    50%{
+        background-position: 100%;
+    }
+    100%{
+        background-position: 0;
+    }
+}
+
+
 
 #nav{
     margin-top: 40px;
@@ -191,6 +211,17 @@ body{
     opacity: 1;
 }
 
+@keyframes navtext {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.nav_ani{
+    animation: navtext 2s ease-in-out;
+}
 .menu_one_one{
     top:144px;
     width: 380px;
@@ -199,6 +230,7 @@ body{
     background-size: cover;
     display: flex;  
     background-image: url(../img/aboutus_img.png);
+    transition: all 300ms ease-in-out 500ms;
 }
 
 .menu_one_one img{
@@ -322,7 +354,7 @@ body{
 .banner_video{
     width: 217.16vh;
     height: 122vh;
-    left: calc(- (1440px - 100vw));
+    left: calc( -1 * (1440px - 100vw));
     position: absolute;
     -webkit-filter:brightness(.7);
     /* z-index: 5; */
@@ -636,8 +668,15 @@ text-align: center;
     color: white;
     font-size: 14px;
     margin: 0 auto;
+    transition: all .4s;
+    
 }
 
+.ingradients_list a:hover{
+    color: #26C6D0;
+    box-shadow: white 0 0px 0px 40px inset;
+    background-color: #fff;
+}
 
 .ingradients h6::after{
     content: "";
@@ -747,7 +786,7 @@ text-align: center;
 
 .swiper {
     width: 100%;
-    height: 100%;
+    height: 110%;
   }
 
   .swiper-slide {
