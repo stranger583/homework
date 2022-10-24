@@ -149,12 +149,19 @@ body{
     max-width: 100%;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(180deg, #585880 3.61%, #26C6D0 95.7%);
+    /* background: linear-gradient(180deg, #585880 3.61%, #26C6D0 95.7%); */
     z-index: 1000;
-    opacity: .9;
+    /* opacity: .9; */
 }
 
+.background{
+    background: linear-gradient(180deg, #585880 3.61%, #26C6D0 95.7%);
+    opacity: .9;
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
 
+}
 .top{
     z-index: 100;
     color: #fff;
@@ -195,6 +202,7 @@ body{
     width: 380px;
     height: 210px;
     position: absolute;
+    background-size: cover;
     display: flex;  
     background-image: url(../img/aboutus_img.png);
 }
@@ -214,6 +222,7 @@ body{
     height: 320px;
     position: absolute;
     display: flex;  
+    background-size: cover;
     background-image: url(../img/work_img.png);
 }
 
@@ -234,6 +243,7 @@ body{
     position: absolute;
     padding: 240.26px 0 0 31px;
     box-sizing: border-box;
+    background-size: cover;
     background-image: url(../img/careers.png);
 }
 
@@ -248,6 +258,7 @@ body{
     position: absolute;
     padding: 73px 0 0 37px;
     box-sizing: border-box;
+    background-size: cover;
     background-image: url(../img/INSIGHTS_img.png);
 }
 
@@ -262,6 +273,7 @@ body{
     padding: 123px 0 0 48px;
     box-sizing: border-box;
     position: absolute;
+    background-size: cover;
     background-image: url(../img/service_img.png);
 }
 
@@ -905,7 +917,7 @@ text-align: center;
    
    @keyframes move{
     0%{
-        top:-100vh;
+        top:-150vh;
     }
     100%{
         top: 0;
@@ -923,7 +935,7 @@ text-align: center;
         top:0;
     }
     100%{
-        top: -100vh;
+        top: -150vh;
         display: none;
     }
    } 
@@ -938,7 +950,7 @@ text-align: center;
 
 
 /* rwd平板 */
-   @media screen and (max-width:1100px) {
+   @media screen and (max-width:1170px) {
      .awards{
         padding: 4.51vw 0 6.8vw 4.79vw;
     }
@@ -1044,8 +1056,228 @@ text-align: center;
         left: 3.18vw;
     }
 
+    .menu_center{
+        padding: 0 10vw 0;
+        box-sizing: border-box;
+        display: block;
+    }
+    .menu_one{
+        /* width: 30%; */
+        width: auto;
+    }
+
+    .menu_one_two{
+        top:14.3.97px;
+        right: 10vw;
+    }
+
+    .menu_two{
+        width: auto;
+        top:225.28px;
+        position:absolute;
+    }
+
+    .menu_three{
+        top:317.44px;
+        position:absolute;
+        right: 10vw;
+        
+    }
+    .top h2{
+        /* font-size: 24px; */
+    }
+    .menu_one_one{
+        height: 143px;
+        width: 290px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 38px 30px;
+    }
+
+    .menu_one_one img{
+        margin:0;
+        display: none;
+
+    }
+
+    .menu_one_one div{
+        margin: 0;
+    }
+
+    .menu_two_one{
+        height: 358.4px;
+        top:100px;
+        border-radius: 20px;
+        padding-top: 120px;
+    }
+
+
+    .menu_two_two{
+        top:501.76px;
+        padding-top: 9px;
+        height: 215.04px;
+        border-radius: 20px;
+    }
+
+    .menu_one_two{
+        height: 286.72px;
+        border-radius: 20px;
+        padding-top: 150px;
+        box-sizing: border-box;
+        top:143.97px;
+    }
+
+    .menu_one_two img{
+        margin-top: 0;
+    }
+
+    .menu_one_two div{
+        margin-top: 0;
+    }
+
+    .menu_three_one{
+        padding: 60px 0 0 48px;
+        height: 286.72px;
+        border-radius: 20px;
+
+    }
+
+    .menu_three_two{
+        height: 143.36px;
+        top:479.23px;
+        padding-top: 35px;
+
+    }
+
 }
 
+@media screen and (max-width:900px) {
+    .menu_center{
+        padding: 0 5vw 0;
+    }
+    .menu_one_two{
+        right: 5vw;
+    }
+    .menu_three{
+        right: 5vw;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .menu_center{
+        padding: 0 4vw 0;
+    }
+
+    .menu_one_two{
+        right: 4vw;
+    }
+
+    .menu_three{
+        right: 4vw;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .holder .logo_white{
+        width: 92px;
+        margin:6px 0 0;
+    }
+    .top h2{
+        width: calc(100% - 50px);
+        font-size: 20px;
+        margin: 0;
+        border-bottom: 1px solid #fff;
+    }
+    .top p{
+        display: none;
+    }
+    .menu_one_two img{
+        display: none;
+    }
+    .menu_three_one img{
+        display: none;
+    }
+    .menu_two_one img{
+        display: none;
+    }
+    .menu_two_two img{
+        display: none;
+    }
+    .menu_center{
+        padding: 0;
+    }
+
+    .menu_three_two h2{
+        color: #fff;
+    }
+    .menu_two{
+        top:0;
+        width: 100%;
+        max-width: 100%;
+    }
+    .menu_three{
+        top:0;
+        right: 0;
+        position: unset;
+        
+    }
+
+    .menu_one_one{
+        display: block;
+        background-image:none;
+        padding: 0;
+        top: 15vh;
+        left:25px;
+        width: 100%;
+        height: auto;
+    }
+    .menu_one_two{
+        display: block;
+        background-image: none;
+        left:25px;
+        top: 22vh;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+    }
+    .menu_two_one{
+        background-image: none;
+        left:25px;
+        top: 29vh;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+    }
+    .menu_three_one{
+        background-image: none;
+        left:25px;
+        top: 36vh;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+    }
+    .menu_two_two{
+        background-image: none;
+        left:25px;
+        top: 43vh;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+    }
+    .menu_three_two{
+        background-color:rgba(0, 0, 0, 0);
+        left:25px;
+        top: 50vh;
+        padding: 0;
+        width: 100%;
+        height: auto;
+
+    }
+}
 
 
 /* rwd手機 */
@@ -1078,6 +1310,10 @@ text-align: center;
     #nav div:nth-child(4){
         width: 16px;
         top:14px;
+    }
+
+    .slidMenu{
+        margin-left: -25px;
     }
 
     .wrapper .holder .logo_blue{
@@ -1324,6 +1560,9 @@ text-align: center;
         left: 0;
     }
     
+   
+
+
 
    }
 
