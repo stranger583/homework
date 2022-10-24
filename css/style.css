@@ -1161,6 +1161,25 @@ text-align: center;
     .menu_three{
         right: 5vw;
     }
+
+    .banner_text2{
+        bottom: 27.2%;
+    }
+    .banner_text2 h1{
+        letter-spacing: 2.5px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+
+    .banner_text2 img{
+        width: 120px;
+    }
+
+    .banner_text2 h1::after{
+        width: 250px;
+        height: 7px;
+        margin-top:-18px;
+    }
 }
 
 @media screen and (max-width:800px) {
@@ -1175,6 +1194,9 @@ text-align: center;
     .menu_three{
         right: 4vw;
     }
+
+
+    
 }
 
 @media screen and (max-width:767px) {
@@ -1182,6 +1204,11 @@ text-align: center;
         width: 92px;
         margin:6px 0 0;
     }
+
+    .background{
+        opacity: .95;
+    }
+
     .top h2{
         width: calc(100% - 50px);
         font-size: 20px;
@@ -1319,24 +1346,6 @@ text-align: center;
     .wrapper .holder .logo_blue{
         width: 95px;
         margin: 0;
-    }
-    .banner_text2{
-        bottom: 27.2%;
-    }
-    .banner_text2 h1{
-        letter-spacing: 2.5px;
-        line-height: 40px;
-        font-size: 18px;
-    }
-
-    .banner_text2 img{
-        width: 120px;
-    }
-
-    .banner_text2 h1::after{
-        width: 250px;
-        height: 7px;
-        margin-top:-18px;
     }
 
     .about{
