@@ -358,11 +358,7 @@ body{
     height: 100vh;
 }
 .banner_video{
-    /* width: 113.89vw;
-    height: 63.98vw; */
-    /* width: 217.16vh; */
-    /* height: 122vh; */
-    left: calc( -1 * (1440px - 100vw));
+    left: calc( -0.6 * (1440px - 100vw));
     position: absolute;
     -webkit-filter:brightness(.7);
     top:0;
