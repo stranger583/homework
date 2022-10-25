@@ -19,7 +19,7 @@ body{
     max-width: 100%;
     width: 100%;
     padding-bottom: 82px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .holder{
@@ -351,18 +351,26 @@ body{
     height: 100vh;
     position: relative;
 }
+
+.video_box{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
 .banner_video{
-    width: 217.16vh;
-    height: 122vh;
+    /* width: 113.89vw;
+    height: 63.98vw; */
+    /* width: 217.16vh; */
+    /* height: 122vh; */
     left: calc( -1 * (1440px - 100vw));
     position: absolute;
     -webkit-filter:brightness(.7);
-    /* z-index: 5; */
     top:0;
 }
 .banner_content{
     position: relative;
     height: 100vh;
+    top: -100vh;
 }
 .banner_text1{
     position: absolute;

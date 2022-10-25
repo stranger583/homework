@@ -48,6 +48,11 @@ let vue = new Vue({
     },
     mounted(){
         let that = this;
+        // 影片寬度
+        let screenHeight = screen.height * 1.025;
+        let viedo_width = 1.78 * screenHeight;
+        $('.banner_video').width(viedo_width).height(screenHeight)
+        // $('.banner_video').height(screenHeight)
         $(".swiper-button-next").click(function(){
             that.count +=1;
         })
@@ -272,26 +277,30 @@ let vue = new Vue({
     }
 })
 
-// var player;
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     videoId: '8_4JRK4QkqU',
-//     events: {
-//       'onReady': onPlayerReady
-//     },
-//     playerVars:{
-//         autohide:1,
-//         controls:0,
-//         setPlaybackQuality: 'hd720', 
-//       },
-//   });
-// }
-// function onPlayerReady(event) {
-//     event.target.playVideo();
-//     console.log("aaa");
-//     event.target.setPlaybackQuality('hd720');
-//     player.setPlaybackQuality('hd720'); 
-//     console.log(player.getPlaybackQuality());
-//   }
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    videoId: '8_4JRK4QkqU',
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange,
+    },
+    playerVars:{
+        autohide:1,
+        controls:0,
+        setPlaybackQuality: 'hd720', 
+      },
+  });
+}
+function onPlayerReady(event) {
+    event.target.playVideo();
+    console.log("aaa");
+    event.target.setPlaybackQuality('hd720');
+    player.setPlaybackQuality('hd720'); 
+    console.log(player.getPlaybackQuality());
+  }
 
 //   https://blog.csdn.net/monkindey/article/details/23659387
+
+
+
