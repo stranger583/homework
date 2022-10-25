@@ -47,12 +47,26 @@ let vue = new Vue({
         ]
     },
     mounted(){
+        //設定
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // swiper
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
         let that = this;
         // 影片寬度
         let screenHeight = screen.height * 1.025;
         let viedo_width = 1.78 * screenHeight;
         $('.banner_video').width(viedo_width).height(screenHeight)
-        // $('.banner_video').height(screenHeight)
+        $(window).resize(function(){
+            let screenHeight = screen.height * 1.025;
+            let viedo_width = 1.78 * screenHeight;
+            $('.banner_video').width(viedo_width).height(screenHeight)
+        });
         $(".swiper-button-next").click(function(){
             that.count +=1;
         })
@@ -75,152 +89,276 @@ let vue = new Vue({
                     }
                 }
             });
-          });
-        
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.to([
-            ".banner_text1 p", ".salad img",".salad p",".banner_text1 div",".salad div"
-        ], {
-            keyframes: [
-                {
-                    duration: 0,
-                    opacity: 0
-                }, {
-                    duration: .7,
-                    y: 150,
-                    opacity: 0
-                }, {
-                    duration: 1,
-                    y: 0,
-                    opacity: 1,
-                    ease: "sine.inOut"
-                }
-            ]
-        });
-        gsap.to([
-            ".banner_text2 img",".banner_text2 h1"
-        ], {
-            keyframes: [
-                {
-                    duration: 0,
-                    opacity: 0
-                }, {
-                    duration: .5,
-                    x: 60,
-                    opacity: 0
-                }, {
-                    duration: .7,
-                    x: 0,
-                    opacity: 1,
-                    ease: "sine.inOut"
-                }
-            ]
         });
         
-        this.clip_gsap(".about",".about_gsap_img" );
-        this.clip_gsap(".awards_title",".awards_title img" );
-        this.clip_gsap(".brand",".brand_gsap_img" );
-        this.clip_gsap(".ingradients",".ingradients_gsap_img" );
-        gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: ".brand",
-                    start: "top top",
-                    end: "+=700",
-                    scrub: 3
-                }
-            })
-            .fromTo(".client_img", {
-                clipPath: "inset(0rem 0rem 40rem 0rem)"
-            }, {
-                duration: 2,
-                ease: "sine.inOut",
-                clipPath: "inset(0rem 0rem 0rem 0rem)"
-            }),
-        gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: ".ingradients",
-                    start: "top top",
-                    end: "+=100",
-                    scrub: 3
-                }
-            })
-            .fromTo(".ingradients_text", {
-                opacity:0,
-                y:100,
-            }, {
-                duration: 2,
-                ease: "sine.inOut",
-                opacity:1,
-                y:0,
-            }),
-        gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: ".awards",
-                    start: "-=300",
-                    end: "-=300",
-                    scrub: 5
-                }
-            })
-            .to("#award_img1", {
-                keyframes: [
-                    {
-                        duration: 0,
-                        x:100,
-                        opacity:0,
-                    }, {
-                        duration: 2.5,
-                        opacity:1,
-                        x:0,
-                        ease: "sine.inOut"
-                    }
-                ]
-            })
-            .to("#award_img2", {
-                keyframes: [
-                    {
-                        duration: 0,
-                        x:100,
-                        opacity:0,
-                    }, {
-                        duration: 2.5,
-                        opacity:1,
-                        x:0,
-                        ease: "sine.inOut"
-                    }
-                ]
-            })
-            .to("#award_img3", {
-                keyframes: [
-                    {
-                        duration: 0,
-                        x:100,
-                        opacity:0,
-                    }, {
-                        duration: 2.5,
-                        opacity:1,
-                        x:0,
-                        ease: "sine.inOut"
-                    }
-                ]
-            })
-            .to("#award_img4", {
-                keyframes: [
-                    {
-                        duration: 0,
-                        x:100,
-                        opacity:0,
-                    }, {
-                        duration: 2.5,
-                        opacity:1,
-                        x:0,
-                        ease: "sine.inOut"
-                    }
-                ]
-            })
+        this.gsap_effect();
+        // if(1100 < document.body.scrollWidth){
+        //     //gsap 預設
+        //     $(".ceo_right p span").css("color","#fff")
+        //     $(".awards_award img").css('opacity', '0')
+        //     $(".ceo_right p").css('opacity', '0');
+        //     $(".ceo_left img").css('opacity', '0');
+        //     $(".ceo_left h4").css('opacity', '0');
+        //     $(".ceo_left p").css('opacity', '0');
+        //     $(".about_video").css('opacity', '0');
+        //     $(".ingradients_list").css('opacity', '0');
+        //     //gsap效果
+        //     this.clip_gsap(".about",".about_gsap_img" );
+        //     this.clip_gsap(".awards_title",".awards_title img" );
+        //     this.clip_gsap(".brand",".brand_gsap_img" );
+        //     this.clip_gsap(".ingradients",".ingradients_gsap_img" );
+        //     gsap
+        //     .to([".banner_text1 p", ".salad img",".salad p",".banner_text1 div",".salad div"], {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 opacity: 0
+        //             }, {
+        //                 duration: .7,
+        //                 y: 150,
+        //                 opacity: 0
+        //             }, {
+        //                 duration: 1,
+        //                 y: 0,
+        //                 opacity: 1,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     });
+        // gsap
+        //     .to([".banner_text2 img",".banner_text2 h1"], {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 opacity: 0
+        //             }, {
+        //                 duration: .5,
+        //                 x: 60,
+        //                 opacity: 0
+        //             }, {
+        //                 duration: .7,
+        //                 x: 0,
+        //                 opacity: 1,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     });
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".brand",
+        //             start: "top top",
+        //             end: "+=700",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .fromTo(".client_img", {
+        //         clipPath: "inset(0rem 0rem 40rem 0rem)"
+        //     }, {
+        //         duration: 2,
+        //         ease: "sine.inOut",
+        //         clipPath: "inset(0rem 0rem 0rem 0rem)"
+        //     }),
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".ingradients",
+        //             start: "-=500",
+        //             end: "+=100",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .fromTo(".ingradients_text", {
+        //         opacity:0,
+        //         y:100,
+        //     }, {
+        //         duration: 2,
+        //         ease: "sine.inOut",
+        //         opacity:1,
+        //         y:0,
+        //     }),
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".awards",
+        //             start: "-=500",
+        //             end: "-=500",
+        //             scrub: 5
+        //         }
+        //     })
+        //     .to("#award_img1", {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 x:100,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2.5,
+        //                 opacity:1,
+        //                 x:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        //     .to("#award_img2", {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 x:100,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2.5,
+        //                 opacity:1,
+        //                 x:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        //     .to("#award_img3", {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 x:100,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2.5,
+        //                 opacity:1,
+        //                 x:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        //     .to("#award_img4", {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 x:100,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2.5,
+        //                 opacity:1,
+        //                 x:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".about_video",
+        //             start: "-=500",
+        //             end: "-=500",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .to(".about_video", {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2,
+        //                 opacity:1,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".ceo_right",
+        //             start: "-=500",
+        //             end: "-=500",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .to(".ceo_right p", {
+        //         keyframes: [
+        //             {
+        //                 opacity:0,
+        //                 x:60,
+        //             }, {
+        //                 duration: 2.5,
+        //                 opacity:1,
+        //                 x:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        //     .to(".ceo_right p span", {
+        //         keyframes: [
+        //             {
+        //                 color:"white",
+        //             }, {
+        //                 duration: 2,
+        //                 color:"#FFBC58",
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        // gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: ".ceo_left",
+        //             start: "-=500",
+        //             end: "-=500",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .to(".ceo_left img", {
+        //         keyframes: [
+        //             {
+        //                 opacity:0,
+        //                 y:60,
+        //             }, {
+        //                 duration: 1.5,
+        //                 opacity:1,
+        //                 y:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        //     .to([".ceo_left h4", ".ceo_left p"], {
+        //         keyframes: [
+        //             {
+        //                 opacity:0,
+        //                 y:60,
+        //             }, {
+        //                 duration: 1,
+        //                 opacity:1,
+        //                 y:0,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        // $(".ingradients_list").each(function(){
+        //     gsap
+        //     .timeline({
+        //         scrollTrigger: {
+        //             trigger: this,
+        //             start: "-=500",
+        //             end: "-=500",
+        //             scrub: 3
+        //         }
+        //     })
+        //     .to(this, {
+        //         keyframes: [
+        //             {
+        //                 duration: 0,
+        //                 opacity:0,
+        //             }, {
+        //                 duration: 2,
+        //                 opacity:1,
+        //                 ease: "sine.inOut"
+        //             }
+        //         ]
+        //     })
+        // })
+
+        // }
         
+        
+
     },
     methods:{
         nav_open(){
@@ -260,8 +398,8 @@ let vue = new Vue({
             .timeline({
                 scrollTrigger: {
                     trigger: trig_name,
-                    start: "-=300",
-                    end: "-=300",
+                    start: "-=500",
+                    end: "-=500",
                     scrub: 3
                 }
             })
@@ -272,35 +410,277 @@ let vue = new Vue({
                 ease: "sine.inOut",
                 clipPath: "inset(0rem 0rem 0rem 0rem)"
             })
-        }
-        
+        },
+        gsap_effect(){
+            if(1100 < document.body.scrollWidth){
+                //gsap 預設
+                $(".ceo_right p span").css("color","#fff")
+                $(".awards_award img").css('opacity', '0')
+                $(".ceo_right p").css('opacity', '0');
+                $(".ceo_left img").css('opacity', '0');
+                $(".ceo_left h4").css('opacity', '0');
+                $(".ceo_left p").css('opacity', '0');
+                $(".about_video").css('opacity', '0');
+                $(".ingradients_list").css('opacity', '0');
+                //gsap效果
+                this.clip_gsap(".about",".about_gsap_img" );
+                this.clip_gsap(".awards_title",".awards_title img" );
+                this.clip_gsap(".brand",".brand_gsap_img" );
+                this.clip_gsap(".ingradients",".ingradients_gsap_img" );
+                gsap
+                .to([".banner_text1 p", ".salad img",".salad p",".banner_text1 div",".salad div"], {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            opacity: 0
+                        }, {
+                            duration: .7,
+                            y: 150,
+                            opacity: 0
+                        }, {
+                            duration: 1,
+                            y: 0,
+                            opacity: 1,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                });
+            gsap
+                .to([".banner_text2 img",".banner_text2 h1"], {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            opacity: 0
+                        }, {
+                            duration: .5,
+                            x: 60,
+                            opacity: 0
+                        }, {
+                            duration: .7,
+                            x: 0,
+                            opacity: 1,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                });
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".brand",
+                        start: "top top",
+                        end: "+=700",
+                        scrub: 3
+                    }
+                })
+                .fromTo(".client_img", {
+                    clipPath: "inset(0rem 0rem 40rem 0rem)"
+                }, {
+                    duration: 2,
+                    ease: "sine.inOut",
+                    clipPath: "inset(0rem 0rem 0rem 0rem)"
+                }),
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".ingradients",
+                        start: "-=500",
+                        end: "+=100",
+                        scrub: 3
+                    }
+                })
+                .fromTo(".ingradients_text", {
+                    opacity:0,
+                    y:100,
+                }, {
+                    duration: 2,
+                    ease: "sine.inOut",
+                    opacity:1,
+                    y:0,
+                }),
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".awards",
+                        start: "-=500",
+                        end: "-=500",
+                        scrub: 5
+                    }
+                })
+                .to("#award_img1", {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            x:100,
+                            opacity:0,
+                        }, {
+                            duration: 2.5,
+                            opacity:1,
+                            x:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+                .to("#award_img2", {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            x:100,
+                            opacity:0,
+                        }, {
+                            duration: 2.5,
+                            opacity:1,
+                            x:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+                .to("#award_img3", {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            x:100,
+                            opacity:0,
+                        }, {
+                            duration: 2.5,
+                            opacity:1,
+                            x:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+                .to("#award_img4", {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            x:100,
+                            opacity:0,
+                        }, {
+                            duration: 2.5,
+                            opacity:1,
+                            x:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".about_video",
+                        start: "-=500",
+                        end: "-=500",
+                        scrub: 3
+                    }
+                })
+                .to(".about_video", {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            opacity:0,
+                        }, {
+                            duration: 2,
+                            opacity:1,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".ceo_right",
+                        start: "-=500",
+                        end: "-=500",
+                        scrub: 3
+                    }
+                })
+                .to(".ceo_right p", {
+                    keyframes: [
+                        {
+                            opacity:0,
+                            x:60,
+                        }, {
+                            duration: 2.5,
+                            opacity:1,
+                            x:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+                .to(".ceo_right p span", {
+                    keyframes: [
+                        {
+                            color:"white",
+                        }, {
+                            duration: 2,
+                            color:"#FFBC58",
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+            gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: ".ceo_left",
+                        start: "-=500",
+                        end: "-=500",
+                        scrub: 3
+                    }
+                })
+                .to(".ceo_left img", {
+                    keyframes: [
+                        {
+                            opacity:0,
+                            y:60,
+                        }, {
+                            duration: 1.5,
+                            opacity:1,
+                            y:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+                .to([".ceo_left h4", ".ceo_left p"], {
+                    keyframes: [
+                        {
+                            opacity:0,
+                            y:60,
+                        }, {
+                            duration: 1,
+                            opacity:1,
+                            y:0,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+            $(".ingradients_list").each(function(){
+                gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: this,
+                        start: "-=500",
+                        end: "-=500",
+                        scrub: 3
+                    }
+                })
+                .to(this, {
+                    keyframes: [
+                        {
+                            duration: 0,
+                            opacity:0,
+                        }, {
+                            duration: 2,
+                            opacity:1,
+                            ease: "sine.inOut"
+                        }
+                    ]
+                })
+            })
+    
+            }
+        },
     }
 })
 
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: '8_4JRK4QkqU',
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange,
-    },
-    playerVars:{
-        autohide:1,
-        controls:0,
-        setPlaybackQuality: 'hd720', 
-      },
-  });
-}
-function onPlayerReady(event) {
-    event.target.playVideo();
-    console.log("aaa");
-    event.target.setPlaybackQuality('hd720');
-    player.setPlaybackQuality('hd720'); 
-    console.log(player.getPlaybackQuality());
-  }
 
-//   https://blog.csdn.net/monkindey/article/details/23659387
 
 
 

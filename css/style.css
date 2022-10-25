@@ -563,7 +563,6 @@ text-align: center;
 
 .awards_award img{
     width: calc( 283 / 1440 * 100vw);
-    opacity: 0;
 }
 
 
