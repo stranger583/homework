@@ -132,7 +132,7 @@ let vue = new Vue({
                 ease: "sine.inOut",
                 clipPath: "inset(0rem 0rem 0rem 0rem)"
             }),
-            gsap
+        gsap
             .timeline({
                 scrollTrigger: {
                     trigger: ".ingradients",
@@ -149,7 +149,73 @@ let vue = new Vue({
                 ease: "sine.inOut",
                 opacity:1,
                 y:0,
+            }),
+        gsap
+            .timeline({
+                scrollTrigger: {
+                    trigger: ".awards",
+                    start: "-=300",
+                    end: "-=300",
+                    scrub: 5
+                }
             })
+            .to("#award_img1", {
+                keyframes: [
+                    {
+                        duration: 0,
+                        x:100,
+                        opacity:0,
+                    }, {
+                        duration: 2.5,
+                        opacity:1,
+                        x:0,
+                        ease: "sine.inOut"
+                    }
+                ]
+            })
+            .to("#award_img2", {
+                keyframes: [
+                    {
+                        duration: 0,
+                        x:100,
+                        opacity:0,
+                    }, {
+                        duration: 2.5,
+                        opacity:1,
+                        x:0,
+                        ease: "sine.inOut"
+                    }
+                ]
+            })
+            .to("#award_img3", {
+                keyframes: [
+                    {
+                        duration: 0,
+                        x:100,
+                        opacity:0,
+                    }, {
+                        duration: 2.5,
+                        opacity:1,
+                        x:0,
+                        ease: "sine.inOut"
+                    }
+                ]
+            })
+            .to("#award_img4", {
+                keyframes: [
+                    {
+                        duration: 0,
+                        x:100,
+                        opacity:0,
+                    }, {
+                        duration: 2.5,
+                        opacity:1,
+                        x:0,
+                        ease: "sine.inOut"
+                    }
+                ]
+            })
+        
     },
     methods:{
         nav_open(){
@@ -205,3 +271,27 @@ let vue = new Vue({
         
     }
 })
+
+// var player;
+// function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('player', {
+//     videoId: '8_4JRK4QkqU',
+//     events: {
+//       'onReady': onPlayerReady
+//     },
+//     playerVars:{
+//         autohide:1,
+//         controls:0,
+//         setPlaybackQuality: 'hd720', 
+//       },
+//   });
+// }
+// function onPlayerReady(event) {
+//     event.target.playVideo();
+//     console.log("aaa");
+//     event.target.setPlaybackQuality('hd720');
+//     player.setPlaybackQuality('hd720'); 
+//     console.log(player.getPlaybackQuality());
+//   }
+
+//   https://blog.csdn.net/monkindey/article/details/23659387
