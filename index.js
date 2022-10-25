@@ -1,6 +1,3 @@
-
-
-
 Vue.config.devtools = true;
 let vue = new Vue({
     el:"#app",
@@ -417,6 +414,18 @@ let vue = new Vue({
 })
 
 
+// var player;
+// console.log();
+// function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('player', {
+//     events: {
+//       'onReady': onPlayerReady
+//     }
+//   });
+// }
+// function onPlayerReady(event) {
+//   console.log(123);
 
+// }
 
 
