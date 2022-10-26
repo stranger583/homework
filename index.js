@@ -1,8 +1,25 @@
+Vue.component('my-component',{
+    props: [
+      "text-load",
+    ],
+    template: `<div class="loader" >
+    <div class="loader-wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>`
+  });
+
 Vue.config.devtools = true;
 let vue = new Vue({
     el:"#app",
     data:{
         navType:"default",
+        isLoading:true,
         count:1,
         lists:[
             {
@@ -41,11 +58,14 @@ let vue = new Vue({
                 img:"./img/ing9.png",
                 text:"BRANDING",
             },
-        ]
+        ]  
     },
+    
     mounted(){
+        
         //設定
         gsap.registerPlugin(ScrollTrigger);
+
         
         // swiper
         var swiper = new Swiper(".mySwiper", {
@@ -90,26 +110,23 @@ let vue = new Vue({
         
         this.gsap_effect();
         
-        
+        setTimeout(() => {
+            this.isLoading = false;
+          }, 2000);
 
     },
     methods:{
         nav_open(){
-            let holder_button = document.getElementsByClassName("holder_button")[0]
-            let logo_white = document.getElementsByClassName("logo_white")[0]
-            let logo_blue = document.getElementsByClassName("logo_blue")[0]
-            let slidMenu = document.getElementsByClassName("slidMenu")[0]
-            let nav = document.getElementById("nav");
-            logo_blue.classList.toggle("none");
-            holder_button.classList.toggle("none");
-            logo_white.classList.toggle("block");
-            nav.classList.toggle('open');
+            $("#nav").toggleClass("open");
+            $(".logo_white").toggleClass("block");
+            $(".holder_button").toggleClass("none");
+            $('.logo_blue').toggleClass("none");
             if(this.navType === 'default'){
-                logo_blue.style.display = "none";
+                $(".logo_blue").css("display","none")
                 $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
-                slidMenu.classList.add("nav_in");
-                slidMenu.classList.remove("nav_out");
                 $(".holder").css('backgroundColor','rgba(255,255,255,0)')
+                $(".slidMenu").addClass("nav_in");
+                $(".slidMenu").removeClass("nav_out");
                 this.navType = 'primary';
             }else{
                 if(scrollY == 0){
@@ -120,9 +137,9 @@ let vue = new Vue({
                     $("#nav>div").css('backgroundColor','#414042')
 
                 }
-                logo_blue.style.display = "block";
-                slidMenu.classList.add("nav_out");
-                slidMenu.classList.remove("nav_in");
+                $(".logo_blue").css("display","block")
+                $(".slidMenu").removeClass("nav_in");
+                $(".slidMenu").addClass("nav_out");
                 this.navType = 'default';
             }
         },
@@ -414,20 +431,6 @@ let vue = new Vue({
 })
 
 
-// var player;
-// console.log();
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     events: {
-//       'onReady': onPlayerReady
-//     }
-//   });
-// }
-// function onPlayerReady(event) {
-//   console.log(123);
-
-// }
-
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
       videoId: '8_4JRK4QkqU',
@@ -467,7 +470,7 @@ function onYouTubeIframeAPIReady() {
         // console.log(player.getPlaybackQuality());
         e.target.setPlaybackQuality('hd1080');
         // console.log(player.getPlaybackQuality());
-        $("#player").css("opacity","1");
+            $("#player").css("opacity","1")
     }else{
         e.target.playVideo();
         $("#player").css("opacity","0");
