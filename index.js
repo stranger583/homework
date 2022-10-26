@@ -18,6 +18,8 @@ Vue.config.devtools = true;
 let vue = new Vue({
     el:"#app",
     data:{
+        screenHeight:0,
+        viedo_width:0,
         video_left:"0",
         navType:"default",
         isLoading:true,
@@ -77,39 +79,38 @@ let vue = new Vue({
           });
         let that = this;
         // 影片寬度
-        let screenHeight = screen.height * 1.025;
-        if(screenHeight < window.innerHeight){
-            console.log(window.innerHeight);
-            screenHeight = 1.6 * window.innerHeight
+        this.screenHeight = screen.height * 1.025;
+        if(this.screenHeight < window.innerHeight){
+            this.screenHeight = 1.6 * window.innerHeight
         };
-        let viedo_width = 1.78 * screenHeight;
+        this.viedo_width = 1.78 * this.screenHeight;
         
 
-        if((1440 - screen.width) >= 0){
-            this.video_left =  -0.6 * (1440 - screen.width)
-            $(".banner_video").css("left",this.video_left)
+        if((1440 - window.innerWidth) >= 0){
+            this.video_left =  -0.6 * (1440 - window.innerWidth);
+            $(".banner_video").css("left",this.video_left);
         }else{
             this.video_left =  0
-            $(".banner_video").css("left",this.video_left)
+            $(".banner_video").css("left",this.video_left);
         }
         
-        $('.banner_video').width(viedo_width).height(screenHeight)
+        $('.banner_video').width(this.viedo_width).height(this.screenHeight)
         $(window).resize(function(){
-            let screenHeight = screen.height * 1.025;
-        if(screenHeight < window.innerHeight){
-            console.log(window.innerHeight);
-            screenHeight = 1.6 * window.innerHeight
+            that.screenHeight = screen.height * 1.025;
+        if(that.screenHeight < window.innerHeight){
+            that.screenHeight = 1.6 * window.innerHeight
         };
-        let viedo_width = 1.78 * screenHeight;
+        that.viedo_width = 1.78 * that.screenHeight;
         
 
-        if((1440 - screen.width) >= 0){
-            this.video_left =  -0.6 * (1440 - screen.width)
-            $(".banner_video").css("left",this.video_left)
+        if((1440 - window.innerWidth) >= 0){
+            that.video_left =  -0.6 * (1440 - window.innerWidth)
+            $(".banner_video").css("left",that.video_left)
         }else{
-            this.video_left =  0
-            $(".banner_video").css("left",this.video_left)
+            that.video_left =  0
+            $(".banner_video").css("left",that.video_left)
         }
+        $('.banner_video').width(that.viedo_width).height(that.screenHeight)
         });
         $(".swiper-button-next").click(function(){
             that.count +=1;
