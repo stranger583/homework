@@ -14,7 +14,6 @@ Vue.component('my-component',{
 </div>`
   });
 
-Vue.config.devtools = true;
 let vue = new Vue({
     el:"#app",
     data:{
@@ -171,12 +170,12 @@ let vue = new Vue({
                 if(scrollY == 0){
                     $(".holder").css('backgroundColor','rgba(255,255,255,0)')
                     $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
+
                 }else{
                     $(".holder").css('backgroundColor','rgba(255,255,255,0.9)')
                     $("#nav>div").css('backgroundColor','#414042')
-
+                    $(".logo_blue").css("display","block")
                 }
-                $(".logo_blue").css("display","block")
                 $(".slidMenu").removeClass("nav_in");
                 $(".slidMenu").addClass("nav_out");
                 this.navType = 'default';
