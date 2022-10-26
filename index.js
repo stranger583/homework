@@ -144,6 +144,9 @@ let vue = new Vue({
             $(".logo_white").toggleClass("block");
             $(".holder_button").toggleClass("none");
             $('.logo_blue').toggleClass("none");
+            // if(window.innerWidth <600){
+            //     // $('.holder_button').toggleClass("block");
+            // }
             if(this.navType === 'default'){
                 $(".logo_blue").css("display","none")
                 $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
