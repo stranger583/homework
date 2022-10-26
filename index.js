@@ -63,12 +63,10 @@ let vue = new Vue({
         ]  
     },
     
-    mounted(){
-        
+    mounted(){   
+        let that = this;
         //設定
         gsap.registerPlugin(ScrollTrigger);
-
-        
         // swiper
         var swiper = new Swiper(".mySwiper", {
             navigation: {
@@ -76,15 +74,14 @@ let vue = new Vue({
               prevEl: ".swiper-button-prev",
             },
           });
-        let that = this;
-        // 影片寬度
+        // 影片高度,寬度
         this.screenHeight = screen.height * 1.025;
         if(this.screenHeight < window.innerHeight){
             this.screenHeight = 1.6 * window.innerHeight
         };
         this.viedo_width = 1.78 * this.screenHeight;
         
-
+        //影片left
         if((1440 - window.innerWidth) >= 0){
             this.video_left =  -0.6 * (1440 - window.innerWidth);
             $(".banner_video").css("left",this.video_left);
@@ -92,8 +89,9 @@ let vue = new Vue({
             this.video_left =  0
             $(".banner_video").css("left",this.video_left);
         }
-        
+        //影片取用高寬
         $('.banner_video').width(this.viedo_width).height(this.screenHeight)
+        //螢幕變更時更換影片寬度
         $(window).resize(function(){
             that.screenHeight = screen.height * 1.025;
         if(that.screenHeight < window.innerHeight){
@@ -111,12 +109,7 @@ let vue = new Vue({
         }
         $('.banner_video').width(that.viedo_width).height(that.screenHeight)
         });
-        $(".swiper-button-next").click(function(){
-            that.count +=1;
-        })
-        $(".swiper-button-prev").click(function(){
-            that.count -=1;
-        })
+        //滾動事件header監聽,goTop監聽
         $(document).ready(function() {
             $(".logo_blue").css("display","none")
             $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
@@ -135,19 +128,11 @@ let vue = new Vue({
                 let scrolled = $(window).scrollTop();
                 if (scrolled > 200) $('.goTop').fadeIn('slow');
                 if (scrolled < 200) $('.goTop').fadeOut('slow');
-              });
-              
-              //回到最頂
-              $('.goTop').click(function () {
-                $("html, body").animate({ scrollTop: "0" },200);
-              });
-                
-            
+              });        
         });
-
-        
-        
+        //gsap效果
         this.gsap_effect();
+        //載入畫面
         setTimeout(() => {
             this.isLoading = false;
           }, 2000);
@@ -262,6 +247,7 @@ let vue = new Vue({
                         ]
                     });
                 }, 2500);            
+                //客戶圖片
                 gsap
                     .timeline({
                         scrollTrigger: {
@@ -475,6 +461,16 @@ let vue = new Vue({
                 })
             }
         },
+        goTop(){
+            $("html, body").animate({ scrollTop: "0" },200);
+        },
+        page_next(){
+            this.count +=1;
+        },
+        page_prev(){
+            this.count -=1;
+        },
+
     }
 })
 

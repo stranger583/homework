@@ -643,10 +643,6 @@ text-align: center;
     margin-bottom: 85px;
 }
 
-.ingradients_bottom{
- 
-}
-
 .ingradients_center{
     display: flex;
     flex-wrap: wrap;
@@ -1107,9 +1103,6 @@ text-align: center;
         display: block;
         margin: 0 auto;
     }
-    .slider_content{
-        /* width: 540px; */
-    }
 
     .sld_text{
         width: 80%;
@@ -1177,9 +1170,7 @@ text-align: center;
         right: 10vw;
         
     }
-    .top h2{
-        /* font-size: 24px; */
-    }
+
     .menu_one_one{
         height: 143px;
         width: 290px;
