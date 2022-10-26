@@ -428,4 +428,50 @@ let vue = new Vue({
 
 // }
 
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: '8_4JRK4QkqU',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange,
+        playerVars:{
+            autoplay: 1,            // 自動播放影片
+            controls: 0,            // 顯示播放器
+            showinfo: 0,            // 隱藏影片標題
+            modestbranding: 0,      // 隱藏YouTube Logo
+            loop: 1,                // 重覆播放
+            playlist:'8_4JRK4QkqU', // 當使用影片要重覆播放時，需再輸入YouTube 影片ID
+            fs: 0,                  // 隱藏全螢幕按鈕
+            cc_load_policty: 0,     // 隱藏字幕
+            iv_load_policy: 3,      // 隱藏影片註解
+            autohide: 0             // 影片播放時，隱藏影片控制列
+        }
+      }
+    });
+  }
+  
+  function onPlayerReady(e) {
+    e.target.mute();      //播放時靜音
+      if(e.target.getPlayerState() !== 1){
+          $("#player").css("opacity","0");
+      }
+    e.target.setPlaybackQuality('hd1080');
+    e.target.playVideo();
+    
+
+    
+  }
+  function onPlayerStateChange(e) {
+    // console.log(e.data)
+    if(e.target.getPlayerState() == 1){
+        // console.log(player.getPlaybackQuality());
+        e.target.setPlaybackQuality('hd1080');
+        // console.log(player.getPlaybackQuality());
+        $("#player").css("opacity","1");
+    }else{
+        e.target.playVideo();
+        $("#player").css("opacity","0");
+    }
+  }
+
 
