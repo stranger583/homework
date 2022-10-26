@@ -76,15 +76,15 @@ let vue = new Vue({
             },
           });
         let that = this;
-        
+        // 影片寬度
         let screenHeight = screen.height * 1.025;
-        let screenWidth = screen.width * 1.1389;
-        // let screenHeight = screen.width * 0.5625;
-        // $('.banner_video').width(screenWidth).height(screenHeight)
-        // let screenHeight = window.screen.availHeight * 1.025;
+        if(screenHeight < window.innerHeight){
+            console.log(window.innerHeight);
+            screenHeight = 1.6 * window.innerHeight
+        };
+        let viedo_width = 1.78 * screenHeight;
         
 
-        let viedo_width = 1.78 * screenHeight;
         if((1440 - screen.width) >= 0){
             this.video_left =  -0.6 * (1440 - screen.width)
             $(".banner_video").css("left",this.video_left)
@@ -92,13 +92,24 @@ let vue = new Vue({
             this.video_left =  0
             $(".banner_video").css("left",this.video_left)
         }
-        console.log(this.video_left);
         
         $('.banner_video').width(viedo_width).height(screenHeight)
         $(window).resize(function(){
             let screenHeight = screen.height * 1.025;
-            let viedo_width = 1.78 * screenHeight;
-            $('.banner_video').width(viedo_width).height(screenHeight)
+        if(screenHeight < window.innerHeight){
+            console.log(window.innerHeight);
+            screenHeight = 1.6 * window.innerHeight
+        };
+        let viedo_width = 1.78 * screenHeight;
+        
+
+        if((1440 - screen.width) >= 0){
+            this.video_left =  -0.6 * (1440 - screen.width)
+            $(".banner_video").css("left",this.video_left)
+        }else{
+            this.video_left =  0
+            $(".banner_video").css("left",this.video_left)
+        }
         });
         $(".swiper-button-next").click(function(){
             that.count +=1;
