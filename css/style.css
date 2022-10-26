@@ -512,6 +512,30 @@ body{
     line-height: 86px;
 }
 
+.about_button:hover{
+    animation: wobble-top 1s ease-in-out;
+}
+@keyframes wobble-top {
+	16.65% {
+		transform: skew(-12deg);
+	}
+	33.3% {
+		transform: skew(10deg);
+	}
+	49.95% {
+		transform: skew(-6deg);
+	}
+	66.6% {
+		transform: skew(4deg);
+	}
+	83.25% {
+		transform: skew(-2deg);
+	}
+	100% {
+		transform: skew(0);
+	}
+}
+
 .about_button span{
     display: inline-block;
     width: 52px;
@@ -598,7 +622,13 @@ text-align: center;
     color: white;
     text-align: center;
     line-height: 92px;
+    transition: all 1s;
 }
+
+.ingradients_button:hover{
+    animation: wobble-top 1s ease-in-out;
+}
+
 
 .ingradients_button span{
     display: inline-block;
@@ -897,6 +927,11 @@ text-align: center;
     background-color: #fff;
     margin-left: 26px;
 }
+
+.sld_button:hover{
+    animation: wobble-top 1s ease-in-out;
+}
+
 
 .sld_circle2{
     width: 53px;
@@ -1634,6 +1669,9 @@ text-align: center;
     .swiper-button-prev, .swiper-rtl .swiper-button-next{
         left: 0;
     }
+    .goTop{
+        right: 0;
+    }
     
    
    }
@@ -1658,6 +1696,7 @@ background-color: #26C6D0;
   top: 0;
   left: 0;
   width: 100%; height: 100%;
+  animation: loading_bg 2s ease-in-out;
 }
 .loader .loader-wrapper {
   position: absolute;
@@ -1672,7 +1711,7 @@ background-color: #26C6D0;
   border-radius: 50%;
   background: #fff;
   opacity: 0;
-  animation: loading 3.3s infinite ease-in-out;
+  animation: loading 3.3s infinite ease;
 }
 .loader .loader-wrapper span:nth-of-type(1) {
   animation-delay: 1000ms;
@@ -1691,15 +1730,53 @@ background-color: #26C6D0;
 }
 @keyframes loading {
   0% {opacity: 0;
-  transform: translateX(-300px);
+    transform: translateX(-300px);
   }
   33% {opacity: 1;
-  transform: translateX(0px);
+    transform: translateX(0px);
   }
   66% {opacity: 1;
-  transform: translateX(0px);
+    transform: translateX(0px);
   }
   100% {opacity: 0;
-  transform: translateX(300px);
+    transform: translateX(300px);
   }
+}
+
+@keyframes loading_bg {
+    0% {opacity: 1;
+    }
+    80% {opacity: 1;
+    }
+    100% {opacity: 0;
+    }
+}
+
+.goTop{
+    width: 50px;
+    height: 50px;
+    /* background-color: #26C6D0; */
+    background: linear-gradient(90deg, #4EE5EA 3.94%, #26D0A8 94.73%);
+    z-index: 10;
+    position: fixed;
+    border-radius: 50%;
+    cursor: pointer;
+    right: 15px;
+    bottom: 35px;
+    display:none;
+    /* border: 2px solid rgba(255,255,255,.7); */
+}
+
+.goTop::after{
+    transform: rotate(-135deg);
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    display: block;
+    content: " ";
+    padding: 7px;
+    left: 17px;
+    height: 0;
+    top: 22px;
+    width: 0;
 }

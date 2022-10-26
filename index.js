@@ -133,11 +133,22 @@ let vue = new Vue({
                         $(".logo_blue").css("display","block")
                     }
                 }
-            });
+                let scrolled = $(window).scrollTop();
+                if (scrolled > 200) $('.goTop').fadeIn('slow');
+                if (scrolled < 200) $('.goTop').fadeOut('slow');
+              });
+              
+              //回到最頂
+              $('.goTop').click(function () {
+                $("html, body").animate({ scrollTop: "0" },200);
+              });
+                
+            
         });
+
+        
         
         this.gsap_effect();
-        
         setTimeout(() => {
             this.isLoading = false;
           }, 2000);
@@ -200,259 +211,269 @@ let vue = new Vue({
                 $(".ceo_left p").css('opacity', '0');
                 $(".about_video").css('opacity', '0');
                 $(".ingradients_list").css('opacity', '0');
+                $(".banner_text1 p").css('opacity', '0');
+                $(".salad img").css('opacity', '0');
+                $(".salad p").css('opacity', '0');
+                $(".banner_text1 div").css('opacity', '0');
+                $(".salad div").css('opacity', '0');
+                $(".banner_text2 img").css('opacity', '0');
+                $(".banner_text2 h1").css('opacity', '0');
+
+                
                 //gsap效果
                 this.clip_gsap(".about",".about_gsap_img" );
                 this.clip_gsap(".awards",".awards_title img" );
                 this.clip_gsap(".brand",".brand_gsap_img" );
                 this.clip_gsap(".ingradients",".ingradients_gsap_img" );
+                setTimeout(() => {
+                    gsap
+                    .to([".banner_text1 p", ".salad img",".salad p",".banner_text1 div",".salad div"], {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                opacity: 0
+                            }, {
+                                duration: .7,
+                                y: 150,
+                                opacity: 0
+                            }, {
+                                duration: 1,
+                                y: 0,
+                                opacity: 1,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    });
                 gsap
-                .to([".banner_text1 p", ".salad img",".salad p",".banner_text1 div",".salad div"], {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            opacity: 0
-                        }, {
-                            duration: .7,
-                            y: 150,
-                            opacity: 0
-                        }, {
-                            duration: 1,
-                            y: 0,
-                            opacity: 1,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                });
-            gsap
-                .to([".banner_text2 img",".banner_text2 h1"], {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            opacity: 0
-                        }, {
-                            duration: .5,
-                            x: 60,
-                            opacity: 0
-                        }, {
-                            duration: .7,
-                            x: 0,
-                            opacity: 1,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                });
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".brand",
-                        start: "top top",
-                        end: "+=700",
-                        scrub: 3
-                    }
-                })
-                .fromTo(".client_img", {
-                    clipPath: "inset(0rem 0rem 40rem 0rem)"
-                }, {
-                    duration: 2,
-                    ease: "sine.inOut",
-                    clipPath: "inset(0rem 0rem 0rem 0rem)"
-                }),
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".ingradients",
-                        start: "-=500",
-                        end: "+=100",
-                        scrub: 3
-                    }
-                })
-                .fromTo(".ingradients_text", {
-                    opacity:0,
-                    y:100,
-                }, {
-                    duration: 2,
-                    ease: "sine.inOut",
-                    opacity:1,
-                    y:0,
-                }),
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".awards",
-                        start: "-=500",
-                        end: "-=500",
-                        scrub: 5
-                    }
-                })
-                .to("#award_img1", {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            x:100,
-                            opacity:0,
-                        }, {
-                            duration: 2.5,
-                            opacity:1,
-                            x:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-                .to("#award_img2", {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            x:100,
-                            opacity:0,
-                        }, {
-                            duration: 2.5,
-                            opacity:1,
-                            x:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-                .to("#award_img3", {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            x:100,
-                            opacity:0,
-                        }, {
-                            duration: 2.5,
-                            opacity:1,
-                            x:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-                .to("#award_img4", {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            x:100,
-                            opacity:0,
-                        }, {
-                            duration: 2.5,
-                            opacity:1,
-                            x:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".about_video",
-                        start: "-=500",
-                        end: "-=500",
-                        scrub: 3
-                    }
-                })
-                .to(".about_video", {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            opacity:0,
-                        }, {
-                            duration: 2,
-                            opacity:1,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".ceo_right",
-                        start: "-=500",
-                        end: "-=500",
-                        scrub: 3
-                    }
-                })
-                .to(".ceo_right p", {
-                    keyframes: [
-                        {
-                            opacity:0,
-                            x:60,
-                        }, {
-                            duration: 2.5,
-                            opacity:1,
-                            x:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-                .to(".ceo_right p span", {
-                    keyframes: [
-                        {
-                            color:"white",
-                        }, {
-                            duration: 2,
-                            color:"#FFBC58",
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-            gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: ".ceo_left",
-                        start: "-=500",
-                        end: "-=500",
-                        scrub: 3
-                    }
-                })
-                .to(".ceo_left img", {
-                    keyframes: [
-                        {
-                            opacity:0,
-                            y:60,
-                        }, {
-                            duration: 1.5,
-                            opacity:1,
-                            y:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-                .to([".ceo_left h4", ".ceo_left p"], {
-                    keyframes: [
-                        {
-                            opacity:0,
-                            y:60,
-                        }, {
-                            duration: 1,
-                            opacity:1,
-                            y:0,
-                            ease: "sine.inOut"
-                        }
-                    ]
-                })
-            $(".ingradients_list").each(function(){
+                    .to([".banner_text2 img",".banner_text2 h1"], {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                opacity: 0
+                            }, {
+                                duration: .5,
+                                x: 60,
+                                opacity: 0
+                            }, {
+                                duration: .7,
+                                x: 0,
+                                opacity: 1,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    });
+                }, 2500);            
                 gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: this,
-                        start: "-=500",
-                        end: "-=500",
-                        scrub: 3
-                    }
-                })
-                .to(this, {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            opacity:0,
-                        }, {
-                            duration: 2,
-                            opacity:1,
-                            ease: "sine.inOut"
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".brand",
+                            start: "top top",
+                            end: "+=700",
+                            scrub: 3
                         }
-                    ]
+                    })
+                    .fromTo(".client_img", {
+                        clipPath: "inset(0rem 0rem 40rem 0rem)"
+                    }, {
+                        duration: 2,
+                        ease: "sine.inOut",
+                        clipPath: "inset(0rem 0rem 0rem 0rem)"
+                    }),
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".ingradients",
+                            start: "-=500",
+                            end: "+=100",
+                            scrub: 3
+                        }
+                    })
+                    .fromTo(".ingradients_text", {
+                        opacity:0,
+                        y:100,
+                    }, {
+                        duration: 2,
+                        ease: "sine.inOut",
+                        opacity:1,
+                        y:0,
+                    }),
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".awards",
+                            start: "-=500",
+                            end: "-=500",
+                            scrub: 5
+                        }
+                    })
+                    .to("#award_img1", {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                x:100,
+                                opacity:0,
+                            }, {
+                                duration: 2.5,
+                                opacity:1,
+                                x:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                    .to("#award_img2", {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                x:100,
+                                opacity:0,
+                            }, {
+                                duration: 2.5,
+                                opacity:1,
+                                x:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                    .to("#award_img3", {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                x:100,
+                                opacity:0,
+                            }, {
+                                duration: 2.5,
+                                opacity:1,
+                                x:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                    .to("#award_img4", {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                x:100,
+                                opacity:0,
+                            }, {
+                                duration: 2.5,
+                                opacity:1,
+                                x:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".about_video",
+                            start: "-=500",
+                            end: "-=500",
+                            scrub: 3
+                        }
+                    })
+                    .to(".about_video", {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                opacity:0,
+                            }, {
+                                duration: 2,
+                                opacity:1,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".ceo_right",
+                            start: "-=500",
+                            end: "-=500",
+                            scrub: 3
+                        }
+                    })
+                    .to(".ceo_right p", {
+                        keyframes: [
+                            {
+                                opacity:0,
+                                x:60,
+                            }, {
+                                duration: 2.5,
+                                opacity:1,
+                                x:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                    .to(".ceo_right p span", {
+                        keyframes: [
+                            {
+                                color:"white",
+                            }, {
+                                duration: 2,
+                                color:"#FFBC58",
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".ceo_left",
+                            start: "-=500",
+                            end: "-=500",
+                            scrub: 3
+                        }
+                    })
+                    .to(".ceo_left img", {
+                        keyframes: [
+                            {
+                                opacity:0,
+                                y:60,
+                            }, {
+                                duration: 1.5,
+                                opacity:1,
+                                y:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                    .to([".ceo_left h4", ".ceo_left p"], {
+                        keyframes: [
+                            {
+                                opacity:0,
+                                y:60,
+                            }, {
+                                duration: 1,
+                                opacity:1,
+                                y:0,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
+                $(".ingradients_list").each(function(){
+                    gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: this,
+                            start: "-=500",
+                            end: "-=500",
+                            scrub: 3
+                        }
+                    })
+                    .to(this, {
+                        keyframes: [
+                            {
+                                duration: 0,
+                                opacity:0,
+                            }, {
+                                duration: 2,
+                                opacity:1,
+                                ease: "sine.inOut"
+                            }
+                        ]
+                    })
                 })
-            })
-    
             }
         },
     }
