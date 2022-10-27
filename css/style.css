@@ -69,7 +69,7 @@ body{
     font-weight: 700;
     font-size: 14px;
     background: linear-gradient(90deg, #4EE5EA 3.94%, #26D0A8 94.73%);
-    transition: all 2s ease-in-out;
+    transition: all 1s ease-in-out;
     background-size: 300%;
 }
 
@@ -1041,11 +1041,15 @@ text-align: center;
    } 
 
    .holder .none{
-    display: none;
+    opacity: 0;
+    /* display: none; */
    }
+
+
 
    .holder .block{
     display: block;
+    opacity: 1;
    }
 
    .wrapper .ytp-chrome-top .ytp-show-cards-title{
@@ -1414,13 +1418,53 @@ white-space: normal;
 }
 
 @media screen and (max-width:767px) {
+    .holder{
+        height: 64px;
+        padding: 13px 25px 0;
+        box-sizing: border-box;
+        /* background-color: #fff; */
+    }
     .holder .logo_white{
         width: 92px;
-        margin:6px 0 0;
+        margin: 0;
     }
-
+    .wrapper .holder .logo_blue{
+        width: 95px;
+        margin: 0;
+    }
     .background{
         opacity: .95;
+    }
+    .holder_button{
+        display: none;
+    }
+
+    #nav{
+        margin: 7px 0;
+    }
+
+    #nav div{
+        width: 20px;
+    }
+    #nav div:nth-child(2), #nav div:nth-child(3){
+        top:7px
+    }
+    #nav div:nth-child(4){
+        width: 16px;
+        top:14px;
+    }
+
+    .slidMenu{
+        margin-left: -25px;
+        top:0;
+    }
+
+    .rwd_btn{
+        position: absolute;
+        display: block;
+        top: 100px;
+        left: 25px;
+        width: 100%;
     }
 
     .top h2{
@@ -1475,7 +1519,7 @@ white-space: normal;
         display: block;
         background-image:none;
         padding: 0;
-        top: 85px;
+        top: 150px;
         left:25px;
         width: 100%;
         height: auto;
@@ -1484,7 +1528,7 @@ white-space: normal;
         display: block;
         background-image: none;
         left:25px;
-        top: 130px;
+        top: 200px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1493,7 +1537,7 @@ white-space: normal;
     .menu_two_one{
         background-image: none;
         left:25px;
-        top: 175px;
+        top: 250px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1502,7 +1546,7 @@ white-space: normal;
     .menu_three_one{
         background-image: none;
         left:25px;
-        top: 220px;
+        top: 300px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1511,7 +1555,7 @@ white-space: normal;
     .menu_two_two{
         background-image: none;
         left:25px;
-        top: 265px;
+        top: 350px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1520,30 +1564,29 @@ white-space: normal;
     .menu_three_two{
         background-color:rgba(0, 0, 0, 0);
         left:25px;
-        top: 310px;
+        top: 400px;
         padding: 0;
         width: 100%;
         height: auto;
     }
 
-    .holder .logo_white{
-        margin: 25px 25 0;
-    } 
+    .holder_right {
+        margin: 0;
+    }
 }
 
 
 /* rwd手機 */
    @media screen and (max-width:600px) {
-    .holder{
+     /* .holder{
         height: 64px;
         padding: 13px 25px 0;
         box-sizing: border-box;
-        /* background-color: #fff; */
-    }
+    } 
 
     .holder .logo_white{
         margin: 0;
-    }
+    } 
     .holder_button{
         display: none;
     }
@@ -1554,7 +1597,7 @@ white-space: normal;
         top: 100px;
         left: 25px;
         width: 100%;
-    }
+    } 
     .menu_one_one{
         top: 150px;
     }
@@ -1573,12 +1616,9 @@ white-space: normal;
     .menu_three_two{
         top: 400px;
     }
- 
-
     .holder_right{
         margin: 0;
     }
-
     #nav{
         margin: 7px 0;
     }
@@ -1597,12 +1637,12 @@ white-space: normal;
     .slidMenu{
         margin-left: -25px;
         top:0;
-    }
+    } */
 
-    .wrapper .holder .logo_blue{
+    /* .wrapper .holder .logo_blue{
         width: 95px;
         margin: 0;
-    }
+    } */
 
     .about{
         padding: 0 25px;

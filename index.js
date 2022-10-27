@@ -148,7 +148,7 @@ let vue = new Vue({
     methods:{
         nav_open(){
             $("#nav").toggleClass("open");
-            $(".logo_white").toggleClass("block");
+                $(".logo_white").toggleClass("block");
             $(".holder_button").toggleClass("none");
             $('.logo_blue').toggleClass("none");
             // if(window.innerWidth <600){
@@ -486,6 +486,15 @@ let vue = new Vue({
             }
             if( window.innerWidth < 1199 && window.innerHeight > 1000 ){
                 $(".background").css("height","100%");
+            }else{
+                $(".background").css("height","1000");
+            }
+            if(window.innerWidth < 767){
+                if(window.innerHeight < 500){
+                    $(".background").css("height","460");
+                }else{
+                    $(".background").css("height","100%");
+                }
             }
         },
         swiper_mobile_hor(){
