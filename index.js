@@ -499,7 +499,7 @@ let vue = new Vue({
                     $(".background").css("height","100%");
                     $(".banner_text1").css("display","block")
                     $(".salad img").css("display","block")
-                    $('.salad div').css('margin-top',20).css("height","25");
+                    $('.salad div').css('margin-top',20).css("height","24");
                 }
             }
         },
