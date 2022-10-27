@@ -492,8 +492,12 @@ let vue = new Vue({
             if(window.innerWidth < 767){
                 if(window.innerHeight < 500){
                     $(".background").css("height","460");
+                    $(".banner_text1").css("display","none")
+                    $(".salad").css("display","none")
                 }else{
                     $(".background").css("height","100%");
+                    $(".banner_text1").css("display","block")
+                    $(".salad").css("display","block")
                 }
             }
         },
