@@ -493,11 +493,13 @@ let vue = new Vue({
                 if(window.innerHeight < 500){
                     $(".background").css("height","460");
                     $(".banner_text1").css("display","none")
-                    $(".salad").css("display","none")
+                    $(".salad img").css("display","none")
+                    $('.salad div').css('margin-top',20).css("height","20");
                 }else{
                     $(".background").css("height","100%");
                     $(".banner_text1").css("display","block")
-                    $(".salad").css("display","block")
+                    $(".salad img").css("display","block")
+                    $('.salad div').css('margin-top',20).css("height","25");
                 }
             }
         },
