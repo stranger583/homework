@@ -163,11 +163,13 @@ body{
 .slidMenu{
     display: none;
     position:fixed;
-    top:-100vh;
+    top:0;
+    right:-110vw;
     max-width: 100%;
     width: 100%;
     height: 100vh;
-    /* background: linear-gradient(180deg, #585880 3.61%, #26C6D0 95.7%); */
+    overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 1000;
     /* opacity: .9; */
 }
@@ -271,7 +273,7 @@ body{
 }
 
 .menu_two_one{
-    top: 40px;
+    top: 92px;
     width: 290px;
     height: 430px;
     position: absolute;
@@ -286,7 +288,7 @@ body{
 }
 
 .menu_two_two{
-    top:510px;
+    top:562px;
     width: 290px;
     height: 282px;
     position: absolute;
@@ -1011,10 +1013,12 @@ text-align: center;
    
    @keyframes move{
     0%{
-        top:-150vh;
+        /* top:-150vh; */
+        right:-110vw;
     }
     100%{
-        top: 0;
+        /* top: 0; */
+        right:0;
     }
    } 
 
@@ -1026,10 +1030,12 @@ text-align: center;
 
    @keyframes out{
     0%{
-        top:0;
+        /* top:0; */
+        right:0;
     }
     100%{
-        top: -150vh;
+        /* top: -150vh; */
+        right:-110vw;
         display: none;
     }
    } 
@@ -1146,9 +1152,18 @@ background-color: #26C6D0;
     width: 0;
 }
 
+.text_limit{
+    overflow: hidden;
+display: -webkit-box;
+text-overflow: ellipsis;
+-webkit-line-clamp: 5; /*行數*/
+-webkit-box-orient: vertical;
+white-space: normal;
+}
+
 
 /* rwd平板 */
-   @media screen and (max-width:1170px) {
+   @media screen and (max-width:1199px) {
      .awards{
         padding: 4.51vw 0 6.8vw 4.79vw;
     }
@@ -1251,6 +1266,10 @@ background-color: #26C6D0;
         left: 3.18vw;
     }
 
+    .background{
+        height: 1000px;
+    }
+
     .menu_center{
         padding: 0 10vw 0;
         box-sizing: border-box;
@@ -1342,6 +1361,8 @@ background-color: #26C6D0;
 
     }
 
+    
+
 }
 
 @media screen and (max-width:900px) {
@@ -1407,6 +1428,7 @@ background-color: #26C6D0;
         font-size: 20px;
         margin: 0;
         border-bottom: 1px solid #fff;
+        letter-spacing: 2.64px;
     }
     .top p{
         display: none;
@@ -1445,11 +1467,15 @@ background-color: #26C6D0;
         
     }
 
+    .background{
+        height: 100vh;
+    }
+
     .menu_one_one{
         display: block;
         background-image:none;
         padding: 0;
-        top: 15vh;
+        top: 85px;
         left:25px;
         width: 100%;
         height: auto;
@@ -1458,7 +1484,7 @@ background-color: #26C6D0;
         display: block;
         background-image: none;
         left:25px;
-        top: 22vh;
+        top: 130px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1467,7 +1493,7 @@ background-color: #26C6D0;
     .menu_two_one{
         background-image: none;
         left:25px;
-        top: 29vh;
+        top: 175px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1476,7 +1502,7 @@ background-color: #26C6D0;
     .menu_three_one{
         background-image: none;
         left:25px;
-        top: 36vh;
+        top: 220px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1485,7 +1511,7 @@ background-color: #26C6D0;
     .menu_two_two{
         background-image: none;
         left:25px;
-        top: 43vh;
+        top: 265px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1494,7 +1520,7 @@ background-color: #26C6D0;
     .menu_three_two{
         background-color:rgba(0, 0, 0, 0);
         left:25px;
-        top: 50vh;
+        top: 310px;
         padding: 0;
         width: 100%;
         height: auto;
@@ -1502,7 +1528,7 @@ background-color: #26C6D0;
 
     .holder .logo_white{
         margin: 25px 25 0;
-    }
+    } 
 }
 
 
@@ -1525,27 +1551,27 @@ background-color: #26C6D0;
     .rwd_btn{
         position: absolute;
         display: block;
-        top: 15vh;
+        top: 100px;
         left: 25px;
         width: 100%;
     }
     .menu_one_one{
-        top: 22vh;
+        top: 150px;
     }
     .menu_one_two{
-        top: 29vh;
+        top: 200px;
     }
     .menu_two_one{
-        top: 36vh;
+        top: 250px;
     }
     .menu_three_one{
-        top: 43vh;
+        top: 300px;
     }
     .menu_two_two{
-        top: 50vh;
+        top: 350px;
     }
     .menu_three_two{
-        top: 57vh;
+        top: 400px;
     }
  
 
@@ -1570,6 +1596,7 @@ background-color: #26C6D0;
 
     .slidMenu{
         margin-left: -25px;
+        top:0;
     }
 
     .wrapper .holder .logo_blue{
@@ -1771,6 +1798,7 @@ background-color: #26C6D0;
     -webkit-box-orient: vertical;
     white-space: normal;
     }
+
 
     .sld_circle1{
         width: 30px;

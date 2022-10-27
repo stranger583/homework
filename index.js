@@ -76,8 +76,8 @@ let vue = new Vue({
           });
         // 影片高度,寬度
         this.screenHeight = screen.height * 1.025;
-        if(this.screenHeight < window.innerHeight){
-            this.screenHeight = 1.6 * window.innerHeight
+        if(this.screenHeight <= (window.innerHeight + 40)){
+            this.screenHeight = 1.73 * window.innerHeight
         };
         this.viedo_width = 1.78 * this.screenHeight;
         
@@ -91,15 +91,17 @@ let vue = new Vue({
         }
         //影片取用高寬
         $('.banner_video').width(this.viedo_width).height(this.screenHeight)
+        //rwd_header_height
+        this.header_bg_w();
+        //swiper_手機側面
+        this.swiper_mobile_hor();
         //螢幕變更時更換影片寬度
         $(window).resize(function(){
             that.screenHeight = screen.height * 1.025;
-        if(that.screenHeight < window.innerHeight){
-            that.screenHeight = 1.6 * window.innerHeight
+        if(that.screenHeight <= (window.innerHeight + 40)){
+            that.screenHeight = 1.73 * window.innerHeight
         };
         that.viedo_width = 1.78 * that.screenHeight;
-        
-
         if((1440 - window.innerWidth) >= 0){
             that.video_left =  -0.6 * (1440 - window.innerWidth)
             $(".banner_video").css("left",that.video_left)
@@ -108,16 +110,21 @@ let vue = new Vue({
             $(".banner_video").css("left",that.video_left)
         }
         $('.banner_video').width(that.viedo_width).height(that.screenHeight)
+        that.header_bg_w();
+        that.swiper_mobile_hor();
         });
         //滾動事件header監聽,goTop監聽
         $(document).ready(function() {
             $(".logo_blue").css("display","none")
             $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
             $(window).scroll(function() {
+
                 if(scrollY === 0){
                     $(".holder").css('backgroundColor','rgba(255,255,255,0)')
                     $("#nav>div").css('backgroundColor','rgba(255,255,255,1)')
                     $(".logo_blue").css("display","none")
+                }else if(that.navType == "primary"){
+                    //不做改變
                 }else{
                     $(".holder").css('backgroundColor','rgba(255,255,255,0.9)')
                     $("#nav>div").css('backgroundColor','#414042')
@@ -473,6 +480,23 @@ let vue = new Vue({
         page_prev(){
             this.count -=1;
         },
+        header_bg_w(){
+            if(window.innerWidth > 1199 && window.innerHeight < 940){
+                $(".background").css("height","940");
+            }
+            if( window.innerWidth < 1199 && window.innerHeight > 1000 ){
+                $(".background").css("height","100%");
+            }
+        },
+        swiper_mobile_hor(){
+            if( window.innerHeight < 600){
+                $(".sld_p2").addClass("text_limit")
+                $(".swiper").css("height","700");
+            }else{
+                $(".sld_p2").removeClass("text_limit")
+                $(".swiper").css("height","110%");
+            }
+        }
 
     }
 })
