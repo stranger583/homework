@@ -1469,7 +1469,7 @@ white-space: normal;
 
     .top h2{
         width: calc(100% - 50px);
-        font-size: 20px;
+        font-size: 18px;
         margin: 0;
         border-bottom: 1px solid #fff;
         letter-spacing: 2.64px;
