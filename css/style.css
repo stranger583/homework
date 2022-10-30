@@ -817,7 +817,7 @@ text-align: center;
     background-repeat: no-repeat;
     position: relative;
     border-radius: 0 0 50px 50px;
-    /* background-size: cover; */
+    background-size: cover;
 }
 
 .swiper {
